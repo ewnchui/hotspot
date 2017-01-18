@@ -9,7 +9,8 @@ services:
     volumes:
       - ${COMPOSEROOT}/geohotspot_data:/data/db
     command: mongod --directoryperdb   
-    
+    env_file:
+      - ../.env    
     
   hotspot:
     depends_on:
@@ -28,3 +29,5 @@ services:
       - /usr/local/share/ca-certificates:/usr/local/share/ca-certificates
       #- ${COMPOSEROOT}/geohotspot/entrypoint.sh:/usr/src/app/entrypoint.sh
       - ${COMPOSEROOT}/geohotspot:/usr/src/app
+    env_file:
+      - ./.env      

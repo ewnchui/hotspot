@@ -1,33 +1,37 @@
 agent = require 'https-proxy-agent'
 
 module.exports =
-	hookTimeout:	10000000
+	hookTimeout:	400000
 	geo:
 		url: 'http://nominatim.openstreetmap.org/reverse'
 		addressUrl:	'http://nominatim.openstreetmap.org/search/'	
-	http:
-		opts:
-			agent:	new agent("http://proxy1.scig.gov.hk:8080")				
-	promise:
-		timeout:	10000000 # ms
+	port:			1337
+	
 	oauth2:
-		tokenUrl:			'https://mob.myvnc.com/org/oauth2/token/'
-		verifyURL:			'https://mob.myvnc.com/org/oauth2/verify/'
-		scope:				[ "https://mob.myvnc.com/org/users"]
-		client:
-			id:		'client id'
-			secret: 'client secret'	
+		
+		verifyURL:			"https://mob.myvnc.com/org/oauth2/verify/"
+		tokenURL:			"https://mob.myvnc.com/org/oauth2/token/"
+		scope:				["https://mob.myvnc.com/org/users"]
+		userURL:			"https://mob.myvnc.com/org/api/users/"	
+		
+	promise:
+		timeout:	10000 # ms
+
 	models:
 		connection: 'mongo'
 		migrate:	'alter'
+	
 	connections:
 		mongo:
 			adapter:	'sails-mongo'
 			driver:		'mongodb'
-			host:		'localhost'
+			host:		'hotspot_mongo'
 			port:		27017
-			user:		'HSsailsrw'
-			password:	'password'
-			database:	'HSsails'
+			user:		''
+			password:	''
+			database:	'hotspot'	
+			
 	log:
-		level:		'info'			
+		level: 'silly'
+		
+			
