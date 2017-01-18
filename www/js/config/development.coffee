@@ -1,4 +1,4 @@
-io.sails.url = 'http://10.30.224.82:8020'
+io.sails.url = 'http://10.30.224.82:8025'
 io.sails.path = "/hotspot/socket.io"
 io.sails.useCORSRouteToGetCookie = false
 
