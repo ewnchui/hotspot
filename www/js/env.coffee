@@ -1,4 +1,4 @@
-io.sails.url = 'https://mob.myvnc.com'
+io.sails.url = 'http://10.30.224.82:8020'
 io.sails.path = "/hotspot/socket.io"
 io.sails.useCORSRouteToGetCookie = false
 
@@ -30,7 +30,7 @@ module.exports =
 			latitude:	22.36633475
 			longitude:	114.08627915
 		distance:	2
-		zoom:	13
+		zoom:	12
 		labelAnchor:	"100 0"
 	mapSize:
 		height:	500	

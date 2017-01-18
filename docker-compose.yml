@@ -7,7 +7,7 @@ services:
     ports:
       - 27017
     volumes:
-      - /home/myroot/docker.shell/hotspot/data:/data/db
+      - ${COMPOSEROOT}/geohotspot_data:/data/db
     command: mongod --directoryperdb   
     
     
@@ -18,8 +18,13 @@ services:
     container_name: hotspot 
     hostname: hotspot
     ports:
-      - 1337
+      - 8025:1337
+      - 8026:8080
+    entrypoint: top -b -d 1000
     volumes:
-      - ${COMPOSEROOT}/hotspot/conf/server.coffee:/usr/src/app/config/env/production.coffee
+      #- ${COMPOSEROOT}/geohotspot/config/env/development.coffee:/usr/src/app/config/env/development.coffee
+      #- ${COMPOSEROOT}/geohotspot/www/js/config/development.coffee:/usr/src/app/www/js/config/development.coffee
       - /etc/ssl/certs:/etc/ssl/certs
       - /usr/local/share/ca-certificates:/usr/local/share/ca-certificates
+      #- ${COMPOSEROOT}/geohotspot/entrypoint.sh:/usr/src/app/entrypoint.sh
+      - ${COMPOSEROOT}/geohotspot:/usr/src/app
