@@ -7,9 +7,9 @@ module.exports =
 	promise:
 		timeout:	10000 # ms
 	oauth2:
-		verifyURL:			"https://mob.myvnc.com/org/oauth2/verify/"
-		tokenURL:			"https://mob.myvnc.com/org/oauth2/token/"
-		scope:				["https://mob.myvnc.com/org/users"]
+		verifyURL:			"https://abc.com/org/oauth2/verify/"
+		tokenURL:			"https://abc.com/org/oauth2/token/"
+		scope:				["https://abc.com/org/users"]
 	models:
 		connection: 'mongo'
 		migrate:	'alter'
