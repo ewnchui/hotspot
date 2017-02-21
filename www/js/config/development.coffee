@@ -1,4 +1,4 @@
-io.sails.url = 'http://10.30.224.82:8025'
+io.sails.url = 'http://abc.com'
 io.sails.path = "/hotspot/socket.io"
 io.sails.useCORSRouteToGetCookie = false
 
@@ -9,21 +9,21 @@ module.exports =
 		/^file/i.test(document.URL)
 	platform: ->
 		if @isNative() then 'mobile' else 'browser'
-	authUrl:	'https://mob.myvnc.com'
+	authUrl:	'https://abc.com'
 
 	serverUrl: (path = @path) ->
-		"https://mob.myvnc.com/#{@path}"
+		"https://abc.com/#{@path}"
 	path: 'hotspot'		
 	server:
 		rest:
-			urlRoot:	'https://mob.myvnc.com/org'
+			urlRoot:	'https://abc.com/org'
 		io:
-			urlRoot:	'https://mob.myvnc.com/im.app'
+			urlRoot:	'https://abc.com/im.app'
 	oauth2:
 		opts:
-			authUrl: "https://mob.myvnc.com/org/oauth2/authorize/"
+			authUrl: "https://abc.com/org/oauth2/authorize/"
 			response_type:	"token"
-			scope:			"https://mob.myvnc.com/org/users"
+			scope:			"https://abc.com/org/users"
 			client_id:		'util.auth.dev'
 	map:
 		coords:
